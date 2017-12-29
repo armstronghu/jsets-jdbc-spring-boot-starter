@@ -19,7 +19,8 @@ package org.jsets.jdbc.config;
 
 import org.jsets.jdbc.JdbcEnhance;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
+import org.springframework.boot.autoconfigure.AutoConfigureAfter;
+import org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -28,16 +29,23 @@ import org.springframework.jdbc.core.JdbcTemplate;
  * 
  * @author wangjie (https://github.com/wj596)
  * @date 2016年6月24日 
+ * 
  */
 @Configuration
+@AutoConfigureAfter(JdbcTemplateAutoConfiguration.class)
 public class JsetsJdbcAutoConfiguration {
+
+	private final JdbcTemplate jdbcTemplate;
+	
+	public JsetsJdbcAutoConfiguration(JdbcTemplate jdbcTemplate) {
+		this.jdbcTemplate = jdbcTemplate;
+	}
 	
 	@Value("${jsets.jdbc.dialect}")
 	private String dialectName;
 	
 	@Bean
-	@ConditionalOnBean(JdbcTemplate.class)
-	public JdbcEnhance jdbcWrapper(JdbcTemplate jdbcTemplate) {
-		return new JdbcEnhance(jdbcTemplate,this.dialectName);
+	public JdbcEnhance jdbcEnhance() {
+		return new JdbcEnhance(this.jdbcTemplate,this.dialectName);
 	}
 }

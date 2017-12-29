@@ -136,8 +136,6 @@ public class JdbcSelector {
 			this.sql = this.sqlBuilder.toString();
 		Assert.hasText(sql, "SQL语句不能为空");
 		FindDelegate<List<T>> delegate =  new FindDelegate<List<T>>(jdbcTemplate,dialectName,entityClass,sql,parameters.toArray());
-		System.out.println(sql);
-		System.out.println(this.parameters.get(0));
 		List<T> results = delegate.execute();
 		delegate = null;//hlep gc.
 		int size = (results != null ? results.size() : 0);
