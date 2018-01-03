@@ -29,3 +29,6 @@ jsets-jdbc-spring-boot-starter在spring jdbctemplate之上进行了一些包装�
 
 #### [使用说明](https://github.com/wj596/jsets-jdbc-spring-boot-starter/wiki?_blank)
 
+#### [基准测试](https://github.com/wj596/jsets-jdbc-spring-boot-starter/wiki/E%E3%80%81%E5%9F%BA%E5%87%86%E6%B5%8B%E8%AF%95/wiki?_blank)
+
+
