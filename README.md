@@ -22,4 +22,7 @@ jsets-jdbc-spring-boot-starter在spring jdbctemplate之上进行了一些包装�
 
 6：实体属性动态映射。
 
+#### [快速开始](https://github.com/wj596/jsets-jdbc-spring-boot-starter/wiki/A%E3%80%81%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B?_blank)
+
+#### [使用说明](https://github.com/wj596/jsets-jdbc-spring-boot-starter/wiki?_blank)
 
