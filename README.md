@@ -1,4 +1,7 @@
+
 # jsets-jdbc-spring-boot-starter
+
+[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 在开发实践中，经常会遇到一些数据库表不多的项目，比如一些非业务性的功能系统、一些职责单一的微服务系统。
 
